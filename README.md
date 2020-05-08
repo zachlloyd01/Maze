@@ -1,4 +1,4 @@
-# Maze
+# Maze Competition
  
 ## Roles
 ### Managing and cleaning code
