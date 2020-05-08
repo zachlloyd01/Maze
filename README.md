@@ -1,6 +1,6 @@
 # Maze
  
-# Roles
+## Roles
 ### Managing and cleaning code
 - Jeremy
 ### Commenting and fixing extraneous bugs
