@@ -7,5 +7,5 @@
 - Megha
 ### Algorithm Dev
 - Zach
-### Doc Creation and Management & Project Oversight
+### Doc Creation and Management & Project Oversight & Test Maze Creation
 - Manuel
