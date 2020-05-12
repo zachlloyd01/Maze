@@ -15,7 +15,7 @@ boolean stage4 = false;
 int[][] mymap = {
 
   { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
-  { 1, 0, 1, 0, 0, 0, 0, 1, 1, 1 },
+  { 1, 0, 0, 0, 0, 0, 0, 1, 1, 1 },
   { 1, 1, 0, 1, 1, 1, 0, 0, 0, 1 },
   { 1, 0, 0, 1, 0, 1, 0, 1, 0, 1 },
   { 1, 0, 1, 1, 0, 1, 1, 1, 0, 1 },
@@ -164,7 +164,7 @@ void actionSelect(){
         if(!stage2)
         {
           // Create grid
-          for (int b = 0; i <= 9; i++)
+          for (int b = 0; b <= 9; b++)
           {
             for (int j = 0; j <= 9; j++)
             {
@@ -181,10 +181,16 @@ void actionSelect(){
           tiles[i].v = 1;
           break;
         }
-        if(tiles[i-10].v == 0.0) //up
-        {
-          rat.move("up");
-          tiles[i].v = 1;
+        try {
+          
+          if(tiles[i-10].v == 0.0) //up
+          {
+            rat.move("up");
+            tiles[i].v = 1;
+            break;
+          }
+        }
+        catch(Exception e) {
           break;
         }
         if(tiles[i-1].v == 0.0) //left
@@ -200,14 +206,13 @@ void actionSelect(){
           break;
         }
       }
-    }
     
-    { if(millis() <= 40000) //stage 4 RNG
+    else if(millis() <= 40000) //stage 4 RNG
       {
         if(!stage3)
         {
           // Create grid
-          for (int b = 0; b <= 9; b++)
+          for (int b = 0; i <= 9; i++)
           {
             for (int j = 0; j <= 9; j++)
             {
@@ -236,5 +241,5 @@ void actionSelect(){
           rat.move("right");
         }
     }
-    }
+  }
 }
