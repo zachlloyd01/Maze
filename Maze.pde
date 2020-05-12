@@ -202,12 +202,12 @@ void actionSelect(){
       }
     }
     
-    else if(millis() <= 40000) //stage 4 RNG
+    { if(millis() <= 40000) //stage 4 RNG
       {
         if(!stage3)
         {
           // Create grid
-          for (int b = 0; i <= 9; i++)
+          for (int b = 0; b <= 9; b++)
           {
             for (int j = 0; j <= 9; j++)
             {
@@ -236,5 +236,5 @@ void actionSelect(){
           rat.move("right");
         }
     }
-  }
-}  
+    }
+}
