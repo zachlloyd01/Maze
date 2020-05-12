@@ -75,52 +75,46 @@ void draw()
    }
 
 }
- 
 
 void actionSelect(){
- 
-   if millis()<= 25000{ //change the milliseconds, Im just putting random amounts for now 
-   
   for(int i = 0; i < tiles.length; i++)
   {
     
     if(( rat.x == tiles[i].x) && ( rat.y == tiles[i].y))
-       {
-            if(tiles[i+1].v ==0.0){
-            
-               rat.move("right");
-               break;
-               
-            } if(tiles[i+1].v == 1){
-               rat.move("down");
-              break;
-              
-            } 
-            
-            
-       }
-       }
-   }
-} if millis()<= 60000{
-  for(int i = 0; i < tiles.length; i++)
-  {
-    
-    if(( rat.x == tiles[i].x) && ( rat.y == tiles[i].y))
-       {
-           
-         if(tiles[i-1].v ==0.0){
-            
-               rat.move("left");
-               break;
-               
-            } if(tiles[i+1].v == 1){
-               rat.move("down");
-              break;
-              
-            } 
-            
-            }
-       }
-   }
-} 
-  
+    {
+      if(millis() <= 10000000)
+      {
+        if(tiles[i+1].v == 0.0)
+        {
+          rat.move("right");
+          tiles[i].v = 1;
+          break;
+        }
+        if(tiles[i+10].v == 0.0)
+        {
+          rat.move("down");
+          tiles[i].v = 1;
+          break;
+        }
+        if(tiles[i-1].v == 0.0)
+        {
+          rat.move("left");
+          tiles[i].v = 1;
+          break;
+        }
+        if(tiles[i-10].v == 0.0)
+        {
+          rat.move("up");
+          tiles[i].v = 1;
+          break;
+        }
+        
+      }
+      
+      else if(millis() <= 20000)
+      {
+        
+      }
+    }  
+  }
+}  
